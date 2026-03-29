@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>贪吃蛇·焕彩版</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+
+    <main class="game-shell">
+      <header class="panel top-panel">
+        <h1>🐍 贪吃蛇 · 焕彩挑战</h1>
+        <p class="subtitle">W A S D 控制方向，吃得越多越强！</p>
+      </header>
+
+      <section class="hud panel">
+        <div class="stat-card">
+          <span class="label">当前分数</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="label">最高记录</span>
+          <strong id="highScore">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="label">生命值</span>
+          <strong id="lives">3</strong>
+        </div>
+        <div class="stat-card">
+          <span class="label">速度</span>
+          <strong id="speed">1.0x</strong>
+        </div>
+      </section>
+
+      <section class="canvas-wrap panel">
+        <canvas id="gameCanvas" width="560" height="560" aria-label="贪吃蛇游戏画布"></canvas>
+        <div id="overlay" class="overlay hidden" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel info">
+        <p>
+          规则：每吃到 1 个食物 +1 分；每累计吃到 10 个食物奖励 +1 生命。撞墙或撞到自己会扣 1 条命并重置蛇位置，生命耗尽游戏结束。
+        </p>
+        <button id="restartBtn" type="button">重新开始</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
